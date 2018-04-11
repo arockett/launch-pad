@@ -34,22 +34,27 @@ filetype plugin indent on   " required
 " see :h vundle for more details or wiki for FAQ
 
 " }}}
-
 " Standard Options {{{
 set encoding=utf-8      " use utf-8 charater encoding in vim buffers
 let mapleader=","       " <leader> is comma
 " }}}
-
 " Editor {{{
 set tabstop=4           " number of rendered spaces per TAB
 set shiftwidth=0        " number of spaces used for <<, >>  0 means use tabstop value
 set softtabstop=-1      " number of spaces inserted for TAB when editing, -1 means use shiftwidth value
 set expandtab           " tabs are spaces
 set autoindent          " copy indent from current line when starting new line
-set backspace=2         " allow backspace over everything in insert mode
 set showmatch           " highlight matching [{()}]
+set nobackup            " I tend to save obsessively so yeeha
+
+" Movement {{{
+set backspace=2         " allow backspace over everything in insert mode
 set scrolloff=7         " don't let the cursor get too close to the top/bottom
 
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+" }}}
 " Searching {{{
 set incsearch           " search as characters are entered
 set hlsearch            " highlight all matches
@@ -58,7 +63,6 @@ set ignorecase          " do case insensitive search by default
 " turn off search highlight with easy sequence
 nnoremap <leader><space> :nohlsearch<CR>
 " }}}
-
 " Folding {{{
 set foldenable          " enable folding
 set foldlevelstart=10   " open most folds by default
@@ -70,7 +74,6 @@ noremap <space> za
 " }}}
 
 " }}}
-
 " UI Config {{{
 set number              " show line numbers
 set showcmd             " show command in bottom bar
